@@ -1,41 +1,47 @@
 import React, {useState} from 'react';
 
 export default function DocFeedbackWidget() {
-  const [feedback, setFeedback] = useState<'up' | 'down' | null>(null);
+    const [submitted, setSubmitted] = useState(false);
 
-  return (
-    <div
-        style={{
-            marginTop: "2rem",
-            padding: "1rem 0",
-            borderTop: "1px solid #ccc",
-        }}
-    >
-        <p style={{ marginBottom: "0.5rem", fontWeight: "bold" }}>
-            Was this page helpful?
-        </p>
-        <button
-            onClick={() => {
-                window.gtag?.("event", "feedback", {
-                    page_path: window.location.pathname,
-                    value: "yes",
-                });
+    const handleFeedback = (value: 'yes' | 'no') => {
+        window.gtag?.("event", "feedback", {
+            page_path: window.location.pathname,
+            value,
+        });
+        setSubmitted(true);
+    };
+
+    return (
+        <div
+            style={{
+                marginTop: "2rem",
+                padding: "1rem 0",
+                borderTop: "1px solid #ccc",
             }}
-            style={{ marginRight: "10px" }}
         >
-            👍🏼 Yes
-        </button>
-        <button
-            onClick={() => {
-                window.gtag?.("event", "feedback", {
-                    page_path: window.location.pathname,
-                    value: "no",
-                });
-            }}
-            style={{ marginRight: "10px" }}
-        >
-            👎🏼 No
-        </button>
-    </div>
-  );
+            {!submitted ? (
+                <>
+                    <p style={{ marginBottom: "0.5rem", fontWeight: "bold" }}>
+                        Was this page helpful?
+                    </p>
+                    <button
+                        onClick={() => handleFeedback('yes')}
+                        style={{ marginRight: "10px" }}
+                    >
+                        👍🏼 Yes
+                    </button>
+                    <button
+                        onClick={() => handleFeedback('no')}
+                        style={{ marginRight: "10px" }}
+                    >
+                        👎🏼 No
+                    </button>
+                </>
+            ) : (
+                <p style={{ fontWeight: "bold", color: "#4caf50" }}>
+                    Thank you for your feedback!
+                </p>
+            )}
+        </div>
+    );
 }
