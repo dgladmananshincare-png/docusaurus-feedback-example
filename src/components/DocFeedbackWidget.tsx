@@ -29,7 +29,7 @@ export default function DocFeedbackWidget() {
             onClick={() => {
                 window.gtag?.("event", "feedback", {
                     page_path: window.location.pathname,
-                    value: "yes",
+                    value: "no",
                 });
             }}
             style={{ marginRight: "10px" }}
