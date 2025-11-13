@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decap CMS Admin</title>
+    <!-- Manual init: we won't rely on external config resolution to avoid 404 root path issues -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+  </head>
+  <body>
+    <div id="nc-root"></div>
+    <!-- Load Decap CMS after the DOM is ready -->
+    <script defer src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+    <script>
+      // Inline config mirrors the previous config.yml contents
+      function initCms() {
+        if (!window.CMS) {
+          return setTimeout(initCms, 50);
+        }
+        window.CMS.init({
+          config: {
+            backend: {
+              name: 'github',
+              repo: 'dgladmananshincare-png/docusaurus-feedback-example',
+              branch: 'main'
+            },
+            media_folder: 'static/img/uploads',
+            public_folder: 'static',
+            collections: [
+              {
+                name: 'docs',
+                label: 'Docs',
+                folder: 'docs',
+                create: true,
+                extension: 'md',
+                format: 'frontmatter',
+                slug: '{{slug}}',
+                nested: { 
+                    depth: 100,
+                    summary: '{{title | default(filename)}}',
+                    subfolders: true
+                },
+                fields: [
+                  { label: 'Title', name: 'title', widget: 'string' },
+                  { label: 'Sidebar Label', name: 'sidebar_label', widget: 'string', required: false },
+                  { label: 'Description', name: 'description', widget: 'text', required: false },
+                  { label: 'Body', name: 'body', widget: 'markdown' }
+                ],
+                meta: { path: { widget: 'string', label: 'Path', index_file: '_index' }}
+              }
+            ]
+          }
+        });
+      }
+      initCms();
+    </script>
+  </body>
+</html>
