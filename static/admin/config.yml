@@ -2,7 +2,7 @@ backend:
   name: github
   branch: main
   repo: dgladmananshincare-png/docusaurus-feedback-example
-  base_url: https://docusaurus-feedback-example.vercel.app/
+  base_url: https://docusaurus-feedback-example.vercel.app
   auth_endpoint: /auth?provider=github
 
 # These lines should *not* be indented
