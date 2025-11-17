@@ -50,6 +50,22 @@ const config: Config = {
 
   plugins: [
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'folder1',
+        path: 'docs/folder1',
+        routeBasePath: './sidebars/folder1.ts',
+      }
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'folder2',
+        path: 'docs/folder2',
+        routeBasePath: './sidebars/folder2.ts'
+      }
+    ],
+    [
       '@docusaurus/plugin-google-gtag',
       {
         trackingID: 'G-S9746HDS6J',
@@ -72,15 +88,17 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'folder1Sidebar',
+          docsPluginId: 'folder1',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Folder1',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          type: 'docSidebar',
+          sidebarId: 'folder2Sidebar',
+          docsPluginId: 'folder2',
+          position: 'left',
+          label: 'Folder2',
         },
       ],
     },
