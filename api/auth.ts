@@ -10,6 +10,12 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   const { host } = req.headers;
   const url = new URL(`https://${host}/${req.url}`);
   const urlParams = url.searchParams;
+
+  console.log("DEBUG AUTH:", {
+    provider: urlParams.get("provider"),
+    clientId: process.env.OAUTH_GITHUB_CLIENT_ID,
+  });
+  
   const provider = urlParams.get("provider") as Provider;
 
   const client = new AuthorizationCode(config(provider));
