@@ -1,7 +1,7 @@
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
-  folder2Sidebar: [{ type: 'doc', id: 'status', label: 'Folder2' }],
+  customerSidebar: [{ type: 'doc', id: 'status', label: 'Customer' }],
 };
 
 export default sidebars;

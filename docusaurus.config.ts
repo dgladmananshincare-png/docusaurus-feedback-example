@@ -52,19 +52,19 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'folder1',
-        path: 'docs/folder1',
-        routeBasePath: 'folder1',
-        sidebarPath: require.resolve('./sidebars.folder1.ts'),
+        id: 'app',
+        path: 'docs/app',
+        routeBasePath: 'app',
+        sidebarPath: require.resolve('./sidebars.app.ts'),
       }
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'folder2',
-        path: 'docs/folder2',
-        routeBasePath: 'folder2',
-        sidebarPath: require.resolve('./sidebars.folder2.ts'),
+        id: 'customer',
+        path: 'docs/customer',
+        routeBasePath: 'customer',
+        sidebarPath: require.resolve('./sidebars.customer.ts'),
       }
     ],
     [
@@ -90,17 +90,17 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'folder1Sidebar',
-          docsPluginId: 'folder1',
+          sidebarId: 'appSidebar',
+          docsPluginId: 'app',
           position: 'left',
-          label: 'Folder1',
+          label: 'App',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'folder2Sidebar',
-          docsPluginId: 'folder2',
+          sidebarId: 'customerSidebar',
+          docsPluginId: 'customer',
           position: 'left',
-          label: 'Folder2',
+          label: 'Customer',
         },
       ],
     },
