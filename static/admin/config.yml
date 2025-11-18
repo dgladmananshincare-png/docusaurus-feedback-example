@@ -16,14 +16,36 @@ locale: "ja"
 
 search: false
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
+
 collections:
-- name: docs
-  label: "docs"
-  folder: docs
+- name: folder1
+  label: "Folder 1"
+  folder: docs/folder1
   identifier_field: title
   extension: md
   widget: "list"
   create: true
+  nested:
+    depth: 5
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  fields:
+    - { name: title, label: Title, widget: string }
+    - { name: body, label: Body, widget: markdown }
+    - { name: slug, label: Slug, widget: string }
+
+- name: folder2
+  label: "Folder 2"
+  folder: docs/folder2
+  identifier_field: title
+  extension: md
+  widget: "list"
+  create: true
+  nested:
+    depth: 5
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
   fields:
     - { name: title, label: Title, widget: string }
