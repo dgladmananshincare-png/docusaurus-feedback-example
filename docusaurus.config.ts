@@ -54,7 +54,8 @@ const config: Config = {
       {
         id: 'folder1',
         path: 'docs/folder1',
-        routeBasePath: './sidebars/folder1.ts',
+        routeBasePath: 'folder1',
+        sidebarPath: require.resolve('./sidebars.folder1.ts'),
       }
     ],
     [
@@ -62,7 +63,8 @@ const config: Config = {
       {
         id: 'folder2',
         path: 'docs/folder2',
-        routeBasePath: './sidebars/folder2.ts'
+        routeBasePath: 'folder2',
+        sidebarPath: require.resolve('./sidebars.folder2.ts'),
       }
     ],
     [
