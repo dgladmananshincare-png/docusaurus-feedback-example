@@ -32,7 +32,7 @@ collections:
   nested:
     depth: 5
     summary: "{{id}}" 
-  slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  slug: "{{path}}/{{id}}"
   fields:
     - { name: id, label: Id, widget: string } # this will be the slug
     - { name: title, label: Title, widget: string }
@@ -51,7 +51,7 @@ collections:
   nested:
     depth: 5
     summary: "{{title}}"
-  slug: "{{id}}" 
+  slug: "{{path}}/{{id}}"
   fields:
     - { name: id, label: Id, widget: string } # this will be the slug
     - { name: title, label: Title, widget: string }
