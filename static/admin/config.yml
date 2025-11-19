@@ -32,6 +32,7 @@ collections:
   nested:
     depth: 5
     summary: "{{id}}" 
+    subfolders: true
   slug: "{{path}}/{{id}}"
   fields:
     - { name: id, label: Id, widget: string } # this will be the slug
@@ -51,6 +52,7 @@ collections:
   nested:
     depth: 5
     summary: "{{title}}"
+    subfolders: true
   slug: "{{path}}/{{id}}"
   fields:
     - { name: id, label: Id, widget: string } # this will be the slug
