@@ -31,12 +31,14 @@ collections:
   create: true
   nested:
     depth: 5
-    summary: "{{title}}"
+    summary: "{{id}}" 
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
   fields:
+    - { name: id, label: Id, widget: string } # this will be the slug
     - { name: title, label: Title, widget: string }
+    - { name: subtitle, label: Subtitle, widget: string }
     - { name: body, label: Body, widget: markdown }
-    - { name: slug, label: Slug, widget: string }
+    - { name: sidebar_position, label: Sidebar Position, widget: number }
   meta: { path: { widget: string, label: "Path", index_file: "_index" } }
 
 - name: customer
