@@ -38,7 +38,7 @@ collections:
     - { name: subtitle, label: Subtitle, widget: string }
     - { name: body, label: Body, widget: markdown }
     - { name: sidebar_position, label: Sidebar Position, widget: number }
-  meta: { path: { widget: string, label: "Path", index_file: "_index" } }
+  meta: { path: { widget: string, label: "Path", index_file: "{{filename}}" } }
 
 - name: customer
   label: "Customer"
