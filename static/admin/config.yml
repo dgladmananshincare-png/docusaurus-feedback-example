@@ -28,6 +28,7 @@ collections:
   identifier_field: title
   extension: md
   create: true
+  slug: "{{id}}"
   nested:
     depth: 5
     summary: "{{title}}" 
