@@ -1,0 +1,65 @@
+# NOTE THIS SETUP DOESNT CURRENTLY WORK WITH DOCUSAURUS BUT MAY BE SOMETHING TO LOOK AT 
+# IN THE FUTURE. CURRENTLY YOU CANNOT USE FLAT FOLDER STRUCTURE TO ADD NEW FILES.
+
+backend:
+  name: github
+  branch: main
+  repo: dgladmananshincare-png/docusaurus-feedback-example
+  base_url: https://docusaurus-feedback-example.vercel.app
+  auth_endpoint: /auth
+
+publish_mode: editorial_workflow
+
+# These lines should *not* be indented
+media_folder: "static/img" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/img/" # The src attribute for uploaded media will begin with /images/uploads
+
+display_url: https://docusaurus-feedback-example.vercel.app/
+locale: "ja"
+
+search: false
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
+
+collections:
+- name: app
+  label: "App"
+  folder: docs/app
+  identifier_field: title
+  extension: md
+  create: true
+  slug: "{{id}}"
+  nested:
+    depth: 5
+    summary: "{{dirname}}" 
+    subfolders: false
+  fields:
+    - { name: id, label: Id, widget: string } 
+    - { name: title, label: Title, widget: string } 
+    - { name: subtitle, label: Subtitle, widget: string, required: false}
+    - { name: body, label: Body, widget: markdown }
+    - { name: sidebar_position, label: Sidebar Position, widget: number }
+  meta: { path: { widget: string, label: "Path", index_file: slug } }
+
+- name: customer
+  label: "Customer"
+  folder: docs/customer
+  identifier_field: title
+  extension: md
+  widget: "list"
+  create: true
+  nested:
+    depth: 5
+    summary: "{{title}}"
+    subfolders: true
+  slug: "{{path}}/{{id}}"
+  fields:
+    - { name: id, label: Id, widget: string } # this will be the slug
+    - { name: title, label: Title, widget: string }
+    - { name: subtitle, label: Subtitle, widget: string }
+    - { name: body, label: Body, widget: markdown }
+    - { name: sidebar_position, label: Sidebar Position, widget: number }
+  meta: { path: { widget: string, label: "Path", index_file: "_index" } }

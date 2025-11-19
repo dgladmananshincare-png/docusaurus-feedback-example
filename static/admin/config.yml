@@ -5,7 +5,7 @@ backend:
   base_url: https://docusaurus-feedback-example.vercel.app
   auth_endpoint: /auth
 
-publish_mode: editorial_workflow
+publish_mode: simple
 
 # These lines should *not* be indented
 media_folder: "static/img" # Media files will be stored in the repo under static/images/uploads
@@ -22,42 +22,23 @@ slug:
   sanitize_replacement: "_"
 
 collections:
-- name: app
-  label: "App"
-  folder: docs/app
+- name: appStartGuide
+  label: "app/start-guide"
+  folder: docs/app/start-guide
   identifier_field: title
   extension: md
   create: true
   slug: "{{id}}"
-  nested:
-    depth: 5
-    summary: "{{dirname}}" 
-    subfolders: false
   fields:
     - { name: id, label: Id, widget: string } 
     - { name: title, label: Title, widget: string } 
     - { name: subtitle, label: Subtitle, widget: string, required: false}
-    - { name: body, label: Body, widget: markdown }
     - { name: sidebar_position, label: Sidebar Position, widget: number }
-  meta: { path: { widget: string, label: "Path", index_file: slug } }
-
-- name: customer
-  label: "Customer"
-  folder: docs/customer
-  identifier_field: title
-  extension: md
-  widget: "list"
-  create: true
-  nested:
-    depth: 5
-    summary: "{{title}}"
-    subfolders: true
-  slug: "{{path}}/{{id}}"
-  fields:
-    - { name: id, label: Id, widget: string } # this will be the slug
-    - { name: title, label: Title, widget: string }
-    - { name: subtitle, label: Subtitle, widget: string }
+    - name: metadata
+      label: Metadata
+      widget: object
+      fields:
+        - { name: pageId, label: Page ID, widget: string }
+        - { name: categoryId, label: Category ID, widget: string }
+        - { name: guideId, label: Guide ID, widget: string }
     - { name: body, label: Body, widget: markdown }
-    - { name: sidebar_position, label: Sidebar Position, widget: number }
-
-  meta: { path: { widget: string, label: "Path", index_file: "_index" } }
