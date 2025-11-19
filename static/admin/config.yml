@@ -34,7 +34,8 @@ collections:
     summary: "{{dirname}}" 
     subfolders: false
   fields:
-    - { name: id, label: Id, widget: string } # this will be the slug
+    - { name: id, label: Id, widget: string } 
+    - { name: title, label: Title, widget: string } 
     - { name: subtitle, label: Subtitle, widget: string, required: false}
     - { name: body, label: Body, widget: markdown }
     - { name: sidebar_position, label: Sidebar Position, widget: number }
