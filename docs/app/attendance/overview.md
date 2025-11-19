@@ -1,4 +1,5 @@
 ---
+id: overview
 title: 概要
 sidebar_position: 2
 description: "アンシンの勤怠管理機能の全体像と各画面の役割をまとめています。"

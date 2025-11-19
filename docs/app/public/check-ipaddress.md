@@ -1,5 +1,6 @@
 ---
 title: 通信制限（権限制限）
+id: check-ipaddress
 subtitle: 「会社」→「設定」→「通信制御」
 sidebar_position: 5
 description: "アクセス元IPアドレスの制限と登録手順を解説します。通信制御の設定方法と運用上の注意点を示します。"

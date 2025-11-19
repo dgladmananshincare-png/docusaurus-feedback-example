@@ -1,4 +1,5 @@
 ---
+id: ledger
 title: 各種帳票
 subtitle: 「請求管理」→「各種帳票」
 sidebar_position: 5

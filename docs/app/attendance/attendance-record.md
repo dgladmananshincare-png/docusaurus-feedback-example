@@ -1,4 +1,5 @@
 ---
+id: attendance-record
 title: 出勤簿管理（権限制限）
 sidebar_position: 6
 description: "出勤簿の管理方法や月間勤務表の修正手順、必要な権限について解説します。"

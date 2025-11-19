@@ -1,4 +1,5 @@
 ---
+id: config
 title: 初めて給与計算を行う職員の設定
 sidebar_position: 3
 description: "給与計算を行う職員の初期設定手順（給与・雇用設定、基本給与額の登録）を説明します。"

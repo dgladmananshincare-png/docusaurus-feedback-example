@@ -1,4 +1,5 @@
 ---
+id: advance
 title: 事前準備
 subtitle: 「事業所」→「サービス」→「電子署名書類」
 sidebar_position: 1

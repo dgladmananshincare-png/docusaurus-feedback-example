@@ -1,4 +1,5 @@
 ---
+id: sale
 title: 売上推移
 subtitle: 「集計・分析」→「集計」→「「売上推移」→「売上合計・サービス別売上」
 sidebar_position: 3

@@ -1,4 +1,10 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 
 export default function DocFeedbackWidget() {
     const [submitted, setSubmitted] = useState(false);

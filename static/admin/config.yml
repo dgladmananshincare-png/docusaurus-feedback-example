@@ -22,9 +22,9 @@ slug:
   sanitize_replacement: "_"
 
 collections:
-- name: folder1
-  label: "Folder 1"
-  folder: docs/folder1
+- name: app
+  label: "App"
+  folder: docs/app
   identifier_field: title
   extension: md
   widget: "list"
@@ -39,9 +39,9 @@ collections:
     - { name: slug, label: Slug, widget: string }
   meta: { path: { widget: string, label: "Path", index_file: "_index" } }
 
-- name: folder2
-  label: "Folder 2"
-  folder: docs/folder2
+- name: customer
+  label: "Customer"
+  folder: docs/customer
   identifier_field: title
   extension: md
   widget: "list"
@@ -49,9 +49,12 @@ collections:
   nested:
     depth: 5
     summary: "{{title}}"
-  slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  slug: "{{id}}" 
   fields:
+    - { name: id, label: Id, widget: string } # this will be the slug
     - { name: title, label: Title, widget: string }
+    - { name: subtitle, label: Subtitle, widget: string }
     - { name: body, label: Body, widget: markdown }
-    - { name: slug, label: Slug, widget: string }
+    - { name: sidebar_position, label: Sidebar Position, widget: number }
+
   meta: { path: { widget: string, label: "Path", index_file: "_index" } }

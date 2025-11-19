@@ -1,4 +1,5 @@
 ---
+id: plan
 title: ケアプラン・サービス計画書
 subtitle: 「ご利用者」→「アセス・計画書・実績・モニタリング」
 sidebar_position: 1

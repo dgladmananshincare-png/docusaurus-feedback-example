@@ -1,4 +1,5 @@
 ---
+id: electronic-signature
 title: 電子署名
 subtitle: 「ご利用者」→「基本情報」→「契約情報」
 sidebar_position: 2

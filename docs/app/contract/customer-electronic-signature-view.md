@@ -1,4 +1,5 @@
 ---
+id: customer-electronic-signature-view
 title: ご利用者による電子署名書類の確認方法
 subtitle: 「ご利用者マイページ」→「ログイン」→「契約情報」
 sidebar_position: 3

@@ -1,4 +1,5 @@
 ---
+id: environment
 title: ご利用環境
 subtitle: 「アンシン」のご利用推奨環境 
 sidebar_position: 2

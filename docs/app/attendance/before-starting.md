@@ -1,4 +1,5 @@
 ---
+id: before-starting
 title: 勤怠管理を始める前に
 sidebar_position: 1
 description: "勤怠管理機能の有効化と雇用条件の登録手順を解説します。導入前の準備ガイドです。"
