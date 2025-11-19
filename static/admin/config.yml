@@ -31,7 +31,7 @@ collections:
   slug: "{{id}}"
   nested:
     depth: 5
-    summary: "{{title}}" 
+    summary: "{{dirname}}" 
     subfolders: false
   fields:
     - { name: id, label: Id, widget: string } # this will be the slug
