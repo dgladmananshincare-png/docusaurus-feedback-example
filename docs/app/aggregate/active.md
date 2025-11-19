@@ -1,5 +1,4 @@
 ---
-path: aggregate
 id: active
 title: 稼働推移
 subtitle: 「集計・分析」→「集計」→「「稼働推移」→「労働時間・サービス別稼働時間」
